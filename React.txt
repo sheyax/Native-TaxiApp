@@ -1,0 +1,16 @@
+React 
+React Native
+expo
+Google API 
+TailwindCss
+Redux 
+React Native Elements
+React Navigation 
+React Native Maps 
+
+1 Setup Redux
+Install redux (npm install @reduxjs/toolkit)
+Install react redux 
+
+2.Setup a provider
+Create a store.js file
