@@ -5,6 +5,7 @@ import Map from '../components/Map';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import NavigateCard from '../components/NavigateCard';
 import RideOptions from '../components/RideOptionsCard';
+import NavFavourites from '../components/NavFavourites';
 
 
 export default function MapScreen() {
@@ -33,6 +34,8 @@ export default function MapScreen() {
   }}/>
 </Stack.Navigator>
       </View>
+
+      <NavFavourites/>
 
      </View>
   );
