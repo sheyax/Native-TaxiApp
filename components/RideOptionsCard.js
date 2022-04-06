@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+import { useState } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, FlatList, Image } from 'react-native';
 import { Icon } from 'react-native-elements';
 import tw from 'tailwind-react-native-classnames'
@@ -30,17 +31,22 @@ const data=[
 export default function RideOptions() {
 
   const navigation= useNavigation();
+
+  const [selected, setSelected]= useState(null)
+
+
   return (
     <SafeAreaView style={tw`flex-grow bg-white`}>
-      <View style={tw``}>
+      <View style={tw`flex-row `}>
         <TouchableOpacity 
-        onPress={() => navigation.navigate("NavigateCard")} >
+        onPress={() => navigation.navigate("NavigateCard")}
+        style={[tw` top-3 left-3 p-3 rounded-full`]} >
           <Icon
           name="chevron-left"
           type="fontawesome"
           />
         </TouchableOpacity>
-      <Text style={tw`text-center py-5 text-xl `}>Select a Ride</Text>
+      <Text style={tw`text-center py-5 text-xl px-5`}>Select a Ride</Text>
 
       </View>
 
@@ -48,7 +54,11 @@ export default function RideOptions() {
       data={data}
       keyExtractor={(item) => item.id}
       renderItem={({item: {id, title, multiplier, image}, item}) => (
-        <TouchableOpacity style={tw`flex-row justify-between items-center px-10`}>
+        <TouchableOpacity 
+        onPress={()=> setSelected(item)}
+        style={tw`flex-row justify-between items-center px-10 ${
+          id === selected?.id && "bg-gray-200"
+        }`}>
           <Image
           style={{width: 100, height: 100, resizeMode: "contain"}}
           source={{uri: image}}
