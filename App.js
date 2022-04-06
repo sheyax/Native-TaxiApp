@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, View } from 'react-native';
 
 //setup redux 
 import {Provider} from 'react-redux'
@@ -16,7 +16,11 @@ export default function App() {
     <Provider store={store}>
 
       <SafeAreaProvider>
-      <Navigation/>
+        
+        <Navigation/>
+
+    
+      
   </SafeAreaProvider> 
       
       
