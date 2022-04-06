@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import HomeScreen from '../screens/HomeScreen';
 import MapScreen from '../screens/MapScreen';
 import EatScreen from '../screens/EatScreen';
+import { KeyboardAvoidingView, Platform } from 'react-native';
 
 
 export default function Navigation() {
@@ -11,7 +12,8 @@ export default function Navigation() {
     const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-
+<KeyboardAvoidingView
+style={{flex: 1}}>
         <Stack.Navigator screenOptions={{
             headerShown: false,
         }}>
@@ -20,7 +22,8 @@ export default function Navigation() {
             <Stack.Screen name='EatScreen' component={EatScreen}/>
 
         </Stack.Navigator>
-    
+        </KeyboardAvoidingView>
+        
     </NavigationContainer>
   );
 }

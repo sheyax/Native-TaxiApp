@@ -35,7 +35,7 @@ export default function MapScreen() {
 </Stack.Navigator>
       </View>
 
-      <NavFavourites/>
+      
 
      </View>
   );
